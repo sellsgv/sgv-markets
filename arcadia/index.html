@@ -207,7 +207,7 @@ footer p{margin:0 0 8px;max-width:90ch}
     <div class="eyebrow">What sellers actually get</div>
     <h2 id="c5">Your home is worth what the market pays, not what an app says.</h2>
     <p>Over the last 12 months, Arcadia sellers averaged <strong>97.7%</strong> of their original asking price. Only 3 of those 12 months reached 100%. Across all of CRMLS, single-family sellers averaged 99.2%, so Arcadia buyers are negotiating harder than most.</p>
-    <p>This past winter was the low point: <strong>93.3%</strong> in January 2026. On a $1.8 million home, that is about $120,000 below the first asking price.</p><p>The gold line shows what sellers got compared to their <strong>final</strong> list price. In September, Arcadia homes sold at 98.0% of their last price but only 96.5% of their original one. That gap is price reductions. Homes priced right on day one tend to land close to asking. Overpriced homes end up chasing the market down.</p>
+    <p>This past winter was the low point: <strong>93.3%</strong> in January 2026. On a $1.8 million home, that is about $120,000 below the first asking price.</p><p>The blue line shows what sellers got compared to their <strong>final</strong> list price. In September, Arcadia homes sold at 98.0% of their last price but only 96.5% of their original one. That gap is price reductions. Homes priced right on day one tend to land close to asking. Overpriced homes end up chasing the market down.</p>
   </div>
   <figure>
     <div class="chart" id="ch-pct"></div>
@@ -334,7 +334,7 @@ function seasonChart(id){
   const pct=avg("pct_a"), dom=med("dom_a");
   const W=Math.max(320,host.clientWidth-24), H=260, m={t:14,r:12,b:28,l:48};
   const lo=95, hi=102, y=v=>m.t+(hi-v)*(H-m.t-m.b)/(hi-lo), bw=(W-m.l-m.r)/12;
-  const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Average percent of original list price by closing month, Arcadia 2021 to 2025"},host);
+  const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Average percent of original list price by closing month, Arcadia 2023 to 2025"},host);
   [95,96,97,98,99,100,101,102].forEach(v=>{ el("line",{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),stroke:css("--rule")},svg); const t=el("text",{x:m.l-8,y:y(v)+4,"text-anchor":"end"},svg); t.textContent=v+"%"; });
   el("line",{x1:m.l,x2:W-m.r,y1:y(100),y2:y(100),stroke:css("--ink-2"),"stroke-width":1.25},svg);
   const tip=document.createElement("div"); tip.className="tip"; host.appendChild(tip);
