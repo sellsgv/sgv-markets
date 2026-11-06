@@ -274,7 +274,7 @@ function fitAsk(){
   let used=0;
   grid.querySelectorAll(".city:not(.ask)").forEach(c=>{ used+=(c.classList.contains("is-live")&&cols>1&&innerWidth>=560)?2:1; });
   const r=used%cols, rows=Math.ceil(used/cols);
-  if(r && cols-r>=2){ ask.style.gridRow=String(rows); ask.style.gridColumn=(r+1)+" / -1"; }
+  if(r){ ask.style.gridRow=String(rows); ask.style.gridColumn=(r+1)+" / -1"; }
   else { ask.style.gridRow=String(rows+1); ask.style.gridColumn="1 / -1"; }
 }
 let ft; addEventListener("resize",()=>{clearTimeout(ft); ft=setTimeout(fitAsk,120);});
