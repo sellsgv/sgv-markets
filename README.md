@@ -11,5 +11,6 @@ Selling SGV market report pages, served at https://reports.selling-sgv.com/
 - `monterey-park/index.html`: Monterey Park single-family market report
 - `pasadena/index.html`: Pasadena single-family market report
 - `rosemead/index.html`: Rosemead single-family market report
+- `san-gabriel/index.html`: San Gabriel single-family market report
 
 Data: California Regional Multiple Listing Service via InfoSparks, refreshed monthly.
