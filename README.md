@@ -6,5 +6,6 @@ Selling SGV market report pages, served at https://reports.selling-sgv.com/
 - `arcadia/index.html`: Arcadia single-family market report
 - `alhambra/index.html`: Alhambra single-family market report
 - `altadena/index.html`: Altadena single-family market report
+- `monrovia/index.html`: Monrovia single-family market report
 
 Data: California Regional Multiple Listing Service via InfoSparks, refreshed monthly.
