@@ -87,7 +87,7 @@ section + section{border-top:1px solid var(--rule)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{font:500 13px var(--f-data);color:var(--ink-2);background:transparent;border:1px solid var(--rule);border-radius:50px;padding:8px 16px;cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));grid-auto-flow:row dense;gap:16px}
 .city{position:relative;display:flex;flex-direction:column;gap:8px;min-height:168px;padding:22px 22px 20px;border:1px solid var(--rule);background:var(--surface);text-decoration:none;color:inherit}
 .city .region{font:500 11px/1.4 var(--f-data);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .city h3{font-size:26px}
@@ -249,7 +249,7 @@ const CITIES = [
   {name:"Temple City", region:2},
   {name:"Rosemead", region:2},
   {name:"Monterey Park", region:2},
-  {name:"Montebello", region:2}
+  {name:"Montebello", region:2, url:"montebello/", meta:"1.8 months of supply · Seller's market"}
 ];
 let area = -1;
 const grid = document.getElementById("grid"), chips = document.getElementById("chips"), q = document.getElementById("q"), empty = document.getElementById("empty");
@@ -265,7 +265,19 @@ function render(){
     : `<div class="city"><span class="region">${REGIONS[c.region]}</span><h3>${esc(c.name)}</h3><span class="foot"><span class="pill soon">Report coming soon</span></span></div>`).join("")
     + (list.length ? `<a class="city ask" href="#cta-h"><span class="region" style="color:var(--hero-2)">Any SGV neighborhood</span><h3>Don't see your city?</h3><span class="meta">Jackie will pull the latest sales for your street and price range.</span><span class="foot"><span class="arrow">Get your numbers ↓</span></span></a>` : "");
   empty.hidden=list.length>0;
+  fitAsk();
 }
+function fitAsk(){
+  const ask=grid.querySelector(".city.ask"); if(!ask) return;
+  ask.style.gridColumn=""; ask.style.gridRow="";
+  const cols=getComputedStyle(grid).gridTemplateColumns.split(" ").filter(Boolean).length||1;
+  let used=0;
+  grid.querySelectorAll(".city:not(.ask)").forEach(c=>{ used+=(c.classList.contains("is-live")&&cols>1&&innerWidth>=560)?2:1; });
+  const r=used%cols, rows=Math.ceil(used/cols);
+  if(r && cols-r>=2){ ask.style.gridRow=String(rows); ask.style.gridColumn=(r+1)+" / -1"; }
+  else { ask.style.gridRow=String(rows+1); ask.style.gridColumn="1 / -1"; }
+}
+let ft; addEventListener("resize",()=>{clearTimeout(ft); ft=setTimeout(fitAsk,120);});
 q.addEventListener("input",render);
 renderChips(); render();
 document.getElementById("copybtn").addEventListener("click",e=>{

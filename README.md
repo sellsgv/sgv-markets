@@ -7,5 +7,6 @@ Selling SGV market report pages, served at https://reports.selling-sgv.com/
 - `alhambra/index.html`: Alhambra single-family market report
 - `altadena/index.html`: Altadena single-family market report
 - `monrovia/index.html`: Monrovia single-family market report
+- `montebello/index.html`: Montebello single-family market report
 
 Data: California Regional Multiple Listing Service via InfoSparks, refreshed monthly.
