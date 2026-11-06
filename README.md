@@ -13,5 +13,6 @@ Selling SGV market report pages, served at https://reports.selling-sgv.com/
 - `rosemead/index.html`: Rosemead single-family market report
 - `san-gabriel/index.html`: San Gabriel single-family market report
 - `san-marino/index.html`: San Marino single-family market report
+- `south-pasadena/index.html`: South Pasadena single-family market report
 
 Data: California Regional Multiple Listing Service via InfoSparks, refreshed monthly.
