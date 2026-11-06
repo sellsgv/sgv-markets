@@ -9,5 +9,6 @@ Selling SGV market report pages, served at https://reports.selling-sgv.com/
 - `monrovia/index.html`: Monrovia single-family market report
 - `montebello/index.html`: Montebello single-family market report
 - `monterey-park/index.html`: Monterey Park single-family market report
+- `pasadena/index.html`: Pasadena single-family market report
 
 Data: California Regional Multiple Listing Service via InfoSparks, refreshed monthly.
