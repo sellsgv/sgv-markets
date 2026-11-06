@@ -104,6 +104,7 @@ section + section{border-top:1px solid var(--rule)}
 .city.ask .meta{color:#d8d8d8}
 .city.ask .arrow{color:var(--hero-2)}
 @media (min-width:560px){.city.is-live{grid-column:span 2}}
+.city.ask{grid-column:1 / -1;min-height:0}
 .empty{padding:28px;border:1px dashed var(--rule);color:var(--ink-2);text-align:center}
 
 /* how to read */
@@ -238,7 +239,7 @@ const REGIONS = ["Foothill cities","West San Gabriel Valley","Central and South 
 const CITIES = [
   {name:"Arcadia", region:0, url:"arcadia/", meta:"5.2 months of supply · Balanced"},
   {name:"Pasadena", region:0},
-  {name:"Altadena", region:0},
+  {name:"Altadena", region:0, url:"altadena/", meta:"2.7 months of supply · Seller's market"},
   {name:"Sierra Madre", region:0},
   {name:"Monrovia", region:0},
   {name:"South Pasadena", region:1},
