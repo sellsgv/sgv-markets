@@ -4,6 +4,7 @@ Selling SGV market report pages, served at https://reports.selling-sgv.com/
 
 - `index.html`: hub page listing every city
 - `arcadia/index.html`: Arcadia single-family market report
+- `zh/arcadia/index.html`: Arcadia report, Simplified Chinese (toggle from the English page)
 - `alhambra/index.html`: Alhambra single-family market report
 - `altadena/index.html`: Altadena single-family market report
 - `monrovia/index.html`: Monrovia single-family market report
